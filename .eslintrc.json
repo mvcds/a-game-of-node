@@ -1,0 +1,20 @@
+{
+  "extends": "airbnb",
+  "plugins": [
+    "mocha",
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "mocha/no-exclusive-tests": "error",
+    "mocha/no-skipped-tests": "error",
+    "mocha/no-pending-tests": "error",
+    "spaced-comment": "off"
+  }
+}
