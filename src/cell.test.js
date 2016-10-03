@@ -1,4 +1,9 @@
 describe('Cell', () => {
+  describe('React', () => {
+    //it('Has a class indicating it is a cell');
+    //it('Has a class indicating its state');
+  });
+
   describe('#toogle', () => {
     //it('Starts dead');
     //it('Becomes alive on odd-th toogle');
