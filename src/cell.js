@@ -3,9 +3,9 @@ import CN from 'classnames';
 
 import './cell.scss';
 
-export default ({isAlive}) => {
+export default ({isAlive, onToggle}) => {
   let classes = CN('cell', { 'cell--alive': isAlive });
 
-  return <div className={classes} ></div>
+  return <div onClick={onToggle} className={classes} ></div>
 };
 

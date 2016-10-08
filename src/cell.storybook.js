@@ -1,7 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf, linkTo } from '@kadira/storybook';
 import Cell from './cell';
 
 storiesOf('Cell', module)
-  .add('Dead', () => <Cell isAlive={false} />)
-  .add('Alive', () => <Cell isAlive={true} />)
+  .add('Dead', () => <Cell onToggle={linkTo('Cell', 'Alive')} isAlive={false} />)
+  .add('Alive', () => <Cell onToggle={linkTo('Cell', 'Dead')} isAlive={true} />)
