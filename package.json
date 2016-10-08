@@ -17,6 +17,7 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.16.0",
     "babel-register": "^6.14.0",
+    "css-loader": "^0.25.0",
     "eslint": "^3.4.0",
     "eslint-config-airbnb": "^10.0.1",
     "eslint-plugin-import": "^1.14.0",
@@ -24,9 +25,13 @@
     "eslint-plugin-mocha": "^4.5.1",
     "eslint-plugin-react": "^6.2.0",
     "mocha": "^3.0.2",
+    "node-sass": "^3.10.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.25"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "react": "^15.3.2"
   }
 }

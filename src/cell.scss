@@ -1,0 +1,11 @@
+.cell {
+  border: 1px solid;
+  background-color: gray;
+  width:10px;
+  height: 10px;
+  border-radius:50%;
+
+  &--alive{
+    background-color: green;
+  }
+}

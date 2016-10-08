@@ -17,13 +17,15 @@ module.exports = {
         include: __dirname,
       },
       {
-        test: /\.css?$/,
-        loaders: ['style', 'raw'],
-        include: __dirname,
+          test: /\.scss$/,
+          loader: 'style!css!sass',
+          exclude: /node_modules/,
+          include: __dirname,
       },
     ],
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+
 };
