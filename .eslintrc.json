@@ -20,6 +20,7 @@
     "mocha/no-exclusive-tests": "error",
     "mocha/no-skipped-tests": "error",
     "mocha/no-pending-tests": "error",
-    "spaced-comment": "off"
+    "spaced-comment": "off",
+    "react/jsx-filename-extension": "off"
   }
 }
