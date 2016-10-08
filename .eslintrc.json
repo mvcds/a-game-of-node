@@ -21,6 +21,14 @@
     "mocha/no-skipped-tests": "error",
     "mocha/no-pending-tests": "error",
     "spaced-comment": "off",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": true,
+        "peerDependencies": false
+      }
+    ]
   }
 }
