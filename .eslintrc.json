@@ -6,6 +6,11 @@
     "jsx-a11y",
     "import"
   ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "env": {
     "browser": true,
     "node": true,
