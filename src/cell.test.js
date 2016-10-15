@@ -1,6 +1,15 @@
+import React from 'react';
+import { shallow } from 'enzyme';
+import { expect } from 'chai';
+import Cell from './cell';
+
 describe('Cell', () => {
   describe('React', () => {
-    //it('Has a class indicating it is a cell');
+    it('Has a class indicating it is a cell', () => {
+      const wrapper = shallow(<Cell isAlive={false} onToggle={() => {}} />);
+
+      expect(wrapper.hasClass('cell')).to.equal(true);
+    });
     //it('Has a class indicating its state');
   });
 
