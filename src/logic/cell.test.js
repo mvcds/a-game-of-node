@@ -1,11 +1,14 @@
-import React from 'react';
 import { expect } from 'chai';
 //import sinon from 'sinon';
-import Cell from './cell'; //(???????????????)
+import Cell from './cell';
 
 describe('Cell', () => {
   describe('#toogle', () => {
-    //it('Starts dead');
+    it('Starts dead', () => {
+      const cell = new Cell();
+
+      expect(cell.isAlive).to.equal(false);
+    });
     //it('Becomes alive on odd-th toogle');
     //it('Becomes dead on even-th toogle');
   });

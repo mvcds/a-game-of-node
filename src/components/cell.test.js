@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import Cell from './cell';
 
-describe('Cell', () => {
+describe('React Cell', () => {
   it('Has a class indicating it is a cell', () => {
     const wrapper = shallow(<Cell isAlive={false} onToggle={() => {}} />);
 
