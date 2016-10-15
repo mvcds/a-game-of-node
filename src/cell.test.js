@@ -10,7 +10,11 @@ describe('Cell', () => {
 
       expect(wrapper.hasClass('cell')).to.equal(true);
     });
-    //it('Has a class indicating its state');
+    it('Has a class indicating it is alive', () => {
+      const wrapper = shallow(<Cell isAlive onToggle={() => {}} />);
+
+      expect(wrapper.hasClass('cell--alive')).to.equal(true);
+    });
   });
 
   describe('#toogle', () => {

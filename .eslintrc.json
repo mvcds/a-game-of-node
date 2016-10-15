@@ -17,6 +17,7 @@
     "mocha": true
   },
   "rules": {
+    "linebreak-style": "off",
     "mocha/no-exclusive-tests": "error",
     "mocha/no-skipped-tests": "error",
     "mocha/no-pending-tests": "error",
