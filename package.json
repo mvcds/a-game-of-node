@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -c -S --recursive --compilers js:babel-register -w src/**/*.test.js",
+    "test": "mocha -c -S --recursive --compilers js:babel-register src/**/*.test.js",
+    "tdd": "npm run test -- -w",
     "lint": "./node_modules/.bin/eslint src --color",
     "storybook": "start-storybook -p 9002 -c .storybook"
   },
