@@ -4,6 +4,5 @@ import Cell from './cell';
 
 storiesOf('Cell', module)
   .add('Dead', () => <Cell onToggle={linkTo('Cell', 'Alive')} isAlive={false} />)
-  .add('Alive', () => <Cell onToggle={linkTo('Cell', 'Dead')} isAlive={true} />)
-
+  .add('Alive', () => <Cell onToggle={linkTo('Cell', 'Dead')} isAlive />);
 
