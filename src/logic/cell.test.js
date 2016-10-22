@@ -9,8 +9,13 @@ describe('Cell', () => {
 
       expect(cell.isAlive).to.equal(false);
     });
-    //it('Becomes alive on odd-th toogle');
-    //it('Becomes dead on even-th toogle');
+    it('Go to next state on First Click', () => {
+      const cell = new Cell();
+      cell.toggleState();
+
+      expect(cell.isAlive).to.equal(true);
+    });
+    //it('Go to the first state on Second Click');
   });
 
   describe('#getNeighbors', () => {
