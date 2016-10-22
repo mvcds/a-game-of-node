@@ -4,9 +4,13 @@ import Cell from './cell';
 
 describe('Cell', () => {
   let cell;
+  let board;
 
   beforeEach(() => {
-    cell = new Cell();
+    board = {
+      findNeighbors: sinon.mock(),
+    };
+    cell = new Cell(board);
   });
 
   describe('#toogle', () => {
@@ -32,17 +36,15 @@ describe('Cell', () => {
     it('Has as many neighbors its board says', () => {
       //Cell is on position [0,0]
 
-      const board = {
-        findNeighbors: sinon.mock(),
-      };
-
       board.findNeighbors
         .withArgs(cell)
         .returns([1, 3, 4]);
 
-      expect(cell.getNeighbors(board).length).to.equal(3);
+      expect(cell.getNeighbors().length).to.equal(3);
     });
-    //it('Get all its neighbors\' status');
+    // it('Get all its neighbors\' status', () => {
+    //   expect().to.equal();
+    // });
   });
 
   describe('#willBeAliveOnNext', () => {
