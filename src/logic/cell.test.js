@@ -4,18 +4,30 @@ import Cell from './cell';
 
 describe('Cell', () => {
   describe('#toogle', () => {
-    it('Starts dead', () => {
-      const cell = new Cell();
 
+    let cell;
+
+    beforeEach(() => {
+      cell = new Cell();
+    });
+
+    it('Starts dead', () => {
       expect(cell.isAlive).to.equal(false);
     });
+
     it('Go to next state on First Click', () => {
-      const cell = new Cell();
       cell.toggleState();
 
       expect(cell.isAlive).to.equal(true);
     });
-    //it('Go to the first state on Second Click');
+
+    it('Go to the first state on Second Click', () => {
+      cell.toggleState();
+      cell.toggleState();
+
+      expect(cell.isAlive).to.equal(false);
+    });
+    
   });
 
   describe('#getNeighbors', () => {
