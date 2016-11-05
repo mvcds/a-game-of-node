@@ -54,24 +54,13 @@ describe('Cell', () => {
           aliveCells.push({ isAlive: i < n });
         }
 
-        it(`Reborn with ${n} Neighbors Alive`, () => {
+        it(`Reborn or Keeps dead, testing with ${n} neighbors`, () => {
           board.findNeighbors
             .withArgs(cell)
             .returns(aliveCells);
 
           expect(cell.getNextState()).to.equal(expectValue);
         });
-      });
-      it('Keeps dead', () => {
-        board.findNeighbors
-          .withArgs(cell)
-          .returns([
-            { isAlive: true },
-            { isAlive: true },
-            { isAlive: true },
-            { isAlive: true }]);
-
-        expect(cell.getNextState()).to.equal(false);
       });
     });
 
