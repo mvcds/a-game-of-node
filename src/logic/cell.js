@@ -11,12 +11,11 @@ class Cell {
   }
   getNextState() {
     const aliveNeighbors = this.getNeighbors()
-        .filter((neighbor) => neighbor.isAlive === true);
+        .filter((neighbor) => neighbor.isAlive === true)
+        .length;
 
-    if (this.isAlive === false && aliveNeighbors.length === 3) {
-      return true;
-    }
-    return false;
+    return (aliveNeighbors === 3
+      || (aliveNeighbors >= 2 && aliveNeighbors <= 3));
   }
 }
 

@@ -71,9 +71,11 @@ describe('Cell', () => {
     });
 
     describe('Alive cell', () => {
-      it('Dies by solitude', () => {
+      beforeEach(() => {
         cell.toggleState();
+      });
 
+      it('Dies by solitude', () => {
         board.findNeighbors
           .withArgs(cell)
           .returns([
@@ -82,8 +84,6 @@ describe('Cell', () => {
         expect(cell.getNextState()).to.equal(false);
       });
       it('Dies by overpopulation', () => {
-        cell.toggleState();
-
         board.findNeighbors
           .withArgs(cell)
           .returns([
@@ -94,7 +94,16 @@ describe('Cell', () => {
 
         expect(cell.getNextState()).to.equal(false);
       });
-      //it('Keeps alive');
+      it('Keeps alive', () => {
+        board.findNeighbors
+          .withArgs(cell)
+          .returns([
+            { isAlive: !true },
+            { isAlive: true },
+            { isAlive: true }]);
+
+        expect(cell.getNextState()).to.equal(true);
+      });
     });
   });
 });
