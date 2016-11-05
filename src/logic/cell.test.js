@@ -42,14 +42,21 @@ describe('Cell', () => {
 
       expect(cell.getNeighbors().length).to.equal(3);
     });
-    // it('Get all its neighbors\' status', () => {
-    //   expect().to.equal();
-    // });
   });
 
-  describe('#willBeAliveOnNext', () => {
+  describe('#getNextState', () => {
     describe('Dead cell', () => {
-      //it('Reborns');
+      it('Reborns', () => {
+        board.findNeighbors
+          .withArgs(cell)
+          .returns([
+            { isAlive: !true },
+            { isAlive: true },
+            { isAlive: true },
+            { isAlive: true }]);
+
+        expect(cell.getNextState()).to.equal(true);
+      });
       //it('Keeps dead');
     });
 
