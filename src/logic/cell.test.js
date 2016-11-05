@@ -57,7 +57,17 @@ describe('Cell', () => {
 
         expect(cell.getNextState()).to.equal(true);
       });
-      //it('Keeps dead');
+      it('Keeps dead', () => {
+        board.findNeighbors
+          .withArgs(cell)
+          .returns([
+            { isAlive: true },
+            { isAlive: true },
+            { isAlive: true },
+            { isAlive: true }]);
+
+        expect(cell.getNextState()).to.equal(false);
+      });
     });
 
     describe('Alive cell', () => {
