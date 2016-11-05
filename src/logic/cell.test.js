@@ -81,7 +81,19 @@ describe('Cell', () => {
 
         expect(cell.getNextState()).to.equal(false);
       });
-      //it('Dies by overpopulation');
+      it('Dies by overpopulation', () => {
+        cell.toggleState();
+
+        board.findNeighbors
+          .withArgs(cell)
+          .returns([
+            { isAlive: true },
+            { isAlive: true },
+            { isAlive: true },
+            { isAlive: true }]);
+
+        expect(cell.getNextState()).to.equal(false);
+      });
       //it('Keeps alive');
     });
   });
