@@ -71,7 +71,16 @@ describe('Cell', () => {
     });
 
     describe('Alive cell', () => {
-      //it('Dies by solitude');
+      it('Dies by solitude', () => {
+        cell.toggleState();
+
+        board.findNeighbors
+          .withArgs(cell)
+          .returns([
+            { isAlive: true }]);
+
+        expect(cell.getNextState()).to.equal(false);
+      });
       //it('Dies by overpopulation');
       //it('Keeps alive');
     });
