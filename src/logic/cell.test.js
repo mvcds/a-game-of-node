@@ -46,16 +46,21 @@ describe('Cell', () => {
 
   describe('#getNextState', () => {
     describe('Dead cell', () => {
-      it('Reborns', () => {
-        board.findNeighbors
-          .withArgs(cell)
-          .returns([
-            { isAlive: !true },
-            { isAlive: true },
-            { isAlive: true },
-            { isAlive: true }]);
+      [0, 1, 2, 3, 4, 5, 6, 7, 8].forEach((n) => {
+        const expectValue = n === 3;
+        const aliveCells = [];
 
-        expect(cell.getNextState()).to.equal(true);
+        for (let i = 0; i < 8; i++) {
+          aliveCells.push({ isAlive: i < n });
+        }
+
+        it(`Reborn with ${n} Neighbors Alive`, () => {
+          board.findNeighbors
+            .withArgs(cell)
+            .returns(aliveCells);
+
+          expect(cell.getNextState()).to.equal(expectValue);
+        });
       });
       it('Keeps dead', () => {
         board.findNeighbors

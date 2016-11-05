@@ -1,5 +1,4 @@
 Como usuário eu quero ter um tabuleiro desenhado na tela
-Como celula eu quero saber quantos vizinhos eu tenho
 Como desenvolvedor eu quero ver quantos vizinhos uma célula tem
 Como usuário eu quero alterar o estado das células no tabuleiro
 Como usuário eu quero alterar a quantidade de linhas e colunas

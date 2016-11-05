@@ -14,8 +14,8 @@ class Cell {
         .filter((neighbor) => neighbor.isAlive === true)
         .length;
 
-    return (aliveNeighbors === 3
-      || (aliveNeighbors >= 2 && aliveNeighbors <= 3));
+    return ((this.isAlive === false && aliveNeighbors === 3)
+      || (this.isAlive && aliveNeighbors >= 2 && aliveNeighbors <= 3));
   }
 }
 
