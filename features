@@ -2,3 +2,14 @@ Como usuário eu quero ter um tabuleiro desenhado na tela
 Como desenvolvedor eu quero ver quantos vizinhos uma célula tem
 Como usuário eu quero alterar o estado das células no tabuleiro
 Como usuário eu quero alterar a quantidade de linhas e colunas
+
+-----------------
+DUVIDA P/ MARCOS
+-----------------
+Em testes, o que mais importa e o codigo está passando ou o seu texto do prompt,
+ser o mais legivel possivel?
+Ex.: "Dies by Solitude and Overpopulation or Keeps Alive, testing with ${n} neighbors"
+- O teste acima passou, porém não sabemos se a celula passou por:
+- Dies by Solitude
+- Overpopulation
+- Keeps Alive

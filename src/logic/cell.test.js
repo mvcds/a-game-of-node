@@ -69,34 +69,22 @@ describe('Cell', () => {
         cell.toggleState();
       });
 
-      it('Dies by solitude', () => {
-        board.findNeighbors
-          .withArgs(cell)
-          .returns([
-            { isAlive: true }]);
+      [0, 1, 2, 3, 4, 5, 6, 7, 8].forEach((n) => {
+        const expectValue = n > 1 && n < 4;
+        const aliveCells = [];
 
-        expect(cell.getNextState()).to.equal(false);
-      });
-      it('Dies by overpopulation', () => {
-        board.findNeighbors
-          .withArgs(cell)
-          .returns([
-            { isAlive: true },
-            { isAlive: true },
-            { isAlive: true },
-            { isAlive: true }]);
+        for (let i = 0; i < 8; i++) {
+          aliveCells.push({ isAlive: i < n });
+        }
 
-        expect(cell.getNextState()).to.equal(false);
-      });
-      it('Keeps alive', () => {
-        board.findNeighbors
-          .withArgs(cell)
-          .returns([
-            { isAlive: !true },
-            { isAlive: true },
-            { isAlive: true }]);
+        it(`Dies by Solitude and Overpopulation or Keeps Alive,
+            testing with ${n} neighbors`, () => {
+          board.findNeighbors
+            .withArgs(cell)
+            .returns(aliveCells);
 
-        expect(cell.getNextState()).to.equal(true);
+          expect(cell.getNextState()).to.equal(expectValue);
+        });
       });
     });
   });
